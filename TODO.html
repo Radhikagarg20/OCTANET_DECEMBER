@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="Organize tasks with this sleek TODO web app" name="description">
+  <title>Task Timeline</title>
+  <link rel="stylesheet" href="TODO.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <script src="TODO.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <h1 style="color: dodgerblue;">Task List</h1>
+    <div class="input-container">
+      <input type="text" id="todo-title" placeholder="Title" autocomplete="off">
+      <input type="text" id="todo-desc" placeholder="Description" autocomplete="off">
+      <button onclick="addTask()" class="btn" id="add" style="background-color: dodgerblue;">Add Task</button>
+    </div>
+    <div id="search-container">
+      <input type="search" id="todo-search" placeholder="Search Tasks" autocomplete="off">
+    </div>
+    <div id="response" style="color: red;"></div>
+    <div class="todo-head" style="background-color: dodgerblue; color: #fff;">
+      <p class="grid-item">Task</p>
+      <p class="grid-item">Description</p>
+      <p class="grid-item">Action</p>
+    </div>
+    <div id="todo-list"></div>
+  </div>
+
+  <div id="editModal" class="modal">
+    <div class="modal-content">
+      <div id="modal-head">
+        <h2 style="color: dodgerblue;">Edit Task</h2>
+        <span class="close" onclick="closeEditModal()" style="color: dodgerblue;">&times;</span>
+      </div>
+      <input type="text" id="editInput" placeholder="Edit your task..." style="border-color: dodgerblue;">
+      <button id="saveEdit" class="btn" onclick="saveChanges()" style="background-color: dodgerblue;">Save Changes
+      </button>
+    </div>
+  </div>
+</body>
+
+</html>
